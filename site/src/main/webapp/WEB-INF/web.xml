@@ -21,7 +21,8 @@
             /WEB-INF/applicationContext-email.xml
             /WEB-INF/applicationContext-security.xml
             /WEB-INF/applicationContext-filter.xml
-            /WEB-INF/applicationContext.xml          
+            /WEB-INF/applicationContext.xml
+            classpath:/bl-multitenant-applicationContext.xml
         </param-value>
     </context-param>
 
