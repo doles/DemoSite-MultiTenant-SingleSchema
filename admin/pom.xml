@@ -67,6 +67,7 @@
                     <debugPort>8011</debugPort>
                     <port>8081</port>
                     <runTarget>admin/</runTarget>
+                    <gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
                 </configuration>
             </plugin>
             <plugin>
@@ -243,6 +244,10 @@
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.broadleafcommerce</groupId>
+            <artifactId>broadleaf-multitenant</artifactId>
         </dependency>
         <dependency>
             <groupId>com.mycompany</groupId>

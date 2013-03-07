@@ -115,6 +115,10 @@
             <artifactId>broadleaf-framework-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.broadleafcommerce</groupId>
+            <artifactId>broadleaf-multitenant</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
         </dependency>
@@ -135,8 +139,12 @@
             <artifactId>commons-dbcp</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.broadleafcommerce</groupId>
-            <artifactId>broadleaf-multisite</artifactId>
+            <groupId>net.jawr</groupId>
+            <artifactId>jawr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yahoo.platform.yui</groupId>
+            <artifactId>yuicompressor</artifactId>
         </dependency>
     </dependencies>
 </project>
