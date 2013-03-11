@@ -1,10 +1,6 @@
 --
 -- This file creates three Broadleaf Sites and two sample ThemeDefinitions
 --
-INSERT INTO BLC_SITE (SITE_ID, NAME, SITE_IDENTIFIER_TYPE, SITE_IDENTIFIER_VALUE) VALUES (1, 'Test Site One', 'DOMAIN', 'www.testsiteone.com');
-INSERT INTO BLC_SITE (SITE_ID, NAME, SITE_IDENTIFIER_TYPE, SITE_IDENTIFIER_VALUE) VALUES (2, 'Test Site Two', 'DOMAIN_PREFIX', 'testsitetwo');
-INSERT INTO BLC_SITE (SITE_ID, NAME, SITE_IDENTIFIER_TYPE, SITE_IDENTIFIER_VALUE) VALUES (3, 'Test Site Three', 'DOMAIN_PREFIX', 'testsitethree');
-INSERT INTO BLC_SITE (SITE_ID, NAME, SITE_IDENTIFIER_TYPE, SITE_IDENTIFIER_VALUE) VALUES (4, 'Test Site Four', 'DOMAIN_PREFIX', 'testsitefour');
             
 -----------------------------------------------------------------------------------------------------------------------------------
 -- SAMPLE THEME 
