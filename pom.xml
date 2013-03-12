@@ -354,7 +354,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-<!--         <module>admin</module> -->
+        <module>admin</module>
         <module>core</module>
         <module>site</module>
 <!--         <module>combined</module> -->
