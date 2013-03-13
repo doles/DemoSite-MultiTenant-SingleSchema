@@ -24,6 +24,8 @@
             /WEB-INF/applicationContext-admin-security.xml
             /WEB-INF/applicationContext-admin-filter.xml
             /WEB-INF/applicationContext-admin.xml
+            classpath:/bl-multitenant-applicationContext.xml
+            classpath:/bl-multitenant-admin-applicationContext.xml
         </param-value>
     </context-param>
 

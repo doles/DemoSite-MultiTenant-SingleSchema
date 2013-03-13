@@ -15,13 +15,20 @@
         <gwt.version>2.4.0</gwt.version>
     </properties>
     <description>My Company's eCommerce Website</description>
+    <!-- 
     <repositories>
         <repository>
-            <id>public releases</id>
-            <name>public releases</name>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/multisite-snapshots/</url>
+        </repository>
+        <repository>
+            <id>public snapshots</id>
+            <name>public snapshots</name>
             <url>http://www.broadleafcommerce.org/nexus/content/repositories/snapshots/</url>
         </repository>
-    </repositories>
+    </repositories> 
+    -->
     <build>
         <pluginManagement>
             <plugins>
@@ -237,6 +244,13 @@
                 <classifier>tests</classifier>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>com.broadleafcommerce</groupId>
+                <artifactId>broadleaf-multitenant</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <type>jar</type>
+                <scope>compile</scope>
+            </dependency>
 
             <!-- Other dependencies -->
             <dependency>
@@ -322,9 +336,20 @@
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jdbc</artifactId>
-                <version>7.0.30</version>
+                <version>7.0.37</version>
                 <type>jar</type>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.jawr</groupId>
+                <artifactId>jawr</artifactId>
+                <version>3.3.3</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.yahoo.platform.yui</groupId>
+                <artifactId>yuicompressor</artifactId>
+                <version>2.2.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

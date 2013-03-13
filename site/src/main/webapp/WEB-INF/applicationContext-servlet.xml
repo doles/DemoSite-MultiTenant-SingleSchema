@@ -73,6 +73,35 @@
     <mvc:resources order="-10" location="favicon.ico" mapping="favicon.ico" />
     <mvc:resources order="-10" location="robots.txt" mapping="robots.txt" />
 
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order" value="-10" />
+        <property name="mappings">
+            <props>
+                <prop key="/css/**">cssResources</prop>
+                <prop key="/js/**">jsResources</prop>
+                <prop key="/img/**">imgResources</prop>
+                <prop key="/fonts/**">fontResources</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="resourceBase" abstract="true" class="com.broadleafcommerce.theme.resource.ThemeResourceHttpRequestHandler">
+        <property name="prefix" value="/WEB-INF/" />
+    </bean>
+
+    <bean id="cssResources" parent="resourceBase">
+        <property name="location" value="/css/" />
+    </bean>
+    <bean id="jsResources" parent="resourceBase">
+        <property name="location" value="/js/" />
+    </bean>
+    <bean id="imgResources" parent="resourceBase">
+        <property name="location" value="/img/" />
+    </bean>
+    <bean id="fontResources" parent="resourceBase">
+        <property name="location" value="/fonts/" />
+    </bean>
+
     <!-- Set up the view resolver to be used by Spring -->
     <bean class="org.broadleafcommerce.common.web.BroadleafThymeleafViewResolver">
         <property name="templateEngine" ref="blWebTemplateEngine" />

@@ -139,6 +139,10 @@
             <artifactId>broadleaf-common</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.broadleafcommerce</groupId>
+            <artifactId>broadleaf-multitenant</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.mycompany</groupId>
             <artifactId>core</artifactId>
         </dependency>
