@@ -84,6 +84,18 @@
     <listener>
         <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
     </listener>
+
+    <servlet>
+        <servlet-name>JerseyServlet</servlet-name>
+        <servlet-class>
+            com.sun.jersey.spi.spring.container.servlet.SpringServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JerseyServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
     
     <!-- Note: The applicationContext-servlet-cms-contentClient.xml file is used to load static assets
          from the Broadleaf CMS such as images. It will match on any URL that contains the static asset
