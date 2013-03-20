@@ -82,8 +82,9 @@
         <property name="authenticationManager" ref="blAdminAuthenticationManager" />
         <property name="securityMetadataSource">
             <sec:filter-security-metadata-source>
-                <sec:intercept-url pattern="/global/**/*" access="PERMISSION_GLOBAL_ADMIN" />
-                <sec:intercept-url pattern="/global/*" access="PERMISSION_GLOBAL_ADMIN" />
+                <sec:intercept-url pattern="/global" access="PERMISSION_GLOBAL_ADMIN" />
+                <sec:intercept-url pattern="/global-*" access="PERMISSION_GLOBAL_ADMIN" />
+                <sec:intercept-url pattern="/global-*/**/*" access="PERMISSION_GLOBAL_ADMIN" />
                 <sec:intercept-url pattern="/**/*" access="PERMISSION_OTHER_DEFAULT" />
                 <sec:intercept-url pattern="/*" access="PERMISSION_OTHER_DEFAULT" />
             </sec:filter-security-metadata-source>
