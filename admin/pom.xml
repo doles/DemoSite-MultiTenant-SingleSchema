@@ -140,7 +140,7 @@
         </dependency>
         <dependency>
             <groupId>com.broadleafcommerce</groupId>
-            <artifactId>broadleaf-multitenant</artifactId>
+            <artifactId>broadleaf-multitenant-singleschema</artifactId>
         </dependency>
         <dependency>
             <groupId>com.mycompany</groupId>
