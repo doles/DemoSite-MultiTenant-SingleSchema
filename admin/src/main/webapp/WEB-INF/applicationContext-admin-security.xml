@@ -45,7 +45,7 @@
         />
         
         <!-- Provide the logout handler -->
-        <sec:logout invalidate-session="true" logout-url="/adminLogout.htm" logout-success-url="/login"/>
+        <sec:logout invalidate-session="false" logout-url="/adminLogout.htm" success-handler-ref="blAdminLogoutSuccessHandler"/>
         
         <!-- Since we run this alongside the site, we need to set up the special port mapping -->
         <!-- This isn't necessary for site becauase it utilizes a default mapping -->
@@ -59,6 +59,8 @@
         <!-- Specify our custom filters -->
         <sec:custom-filter ref="blAdminFilterSecurityInterceptor" after="EXCEPTION_TRANSLATION_FILTER"/>
     </sec:http>
+
+    <bean id="blAdminLogoutSuccessHandler" class="com.broadleafcommerce.tenant.admin.web.BroadleafMultiTenantAdminLogoutSuccessHandler"/>
 
     <bean id="adminAuthenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
         <constructor-arg value="/login"/>
