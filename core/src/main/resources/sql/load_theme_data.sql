@@ -1,30 +1,19 @@
---
--- This file creates three Broadleaf Sites and two sample ThemeDefinitions
---
-            
------------------------------------------------------------------------------------------------------------------------------------
--- SAMPLE THEME 
------------------------------------------------------------------------------------------------------------------------------------
+-- The two themes provided
 INSERT INTO BLC_THEME_DEFINITION (THEME_DEFINITION_ID, THEME_NAME, THEME_DESCRIPITON, THEME_PATH) VALUES (1, 'Default Theme', 'Default theme used if a site does not specify a theme', 'default-theme/') ;
-INSERT INTO BLC_THEME_DEFINITION (THEME_DEFINITION_ID, THEME_NAME, THEME_DESCRIPITON, THEME_PATH) VALUES (2, 'Custom Theme 1', 'Custom theme 1', 'theme2/') ;
+INSERT INTO BLC_THEME_DEFINITION (THEME_DEFINITION_ID, THEME_NAME, THEME_DESCRIPITON, THEME_PATH) VALUES (2, 'Custom Theme 1', 'Reversed logo, custom headerColor theme', 'theme2/') ;
 
------------------------------------------------------------------------------------------------------------------------------------
--- SAMPLE THEME CONFIGURATIONS
---      Site 1 maps to custom theme1
---      Site 2 maps to custom theme1
---      Site 3 maps directly to the default theme
---      Site 4 doesn't map to a theme and therefore uses the default
------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, SITE_ID, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (1, null, 1, true);
-INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, SITE_ID, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (2, 1, 2, true);
-INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, SITE_ID, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (3, 2, 2, true);
-INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, SITE_ID, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (4, 3, 1, true);
+-- Two default theme configurations
+INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, THEME_NAME, SITE_DISC, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (1, 'Default Theme Configuration', null, 1, true);
+INSERT INTO BLC_THEME_CONFIGURATION (THEME_CONFIGURATION_ID, THEME_NAME, SITE_DISC, THEME_DEFINITION_ID, DEFAULT_THEME) VALUES (2, 'Custom Theme 1 Configuration', 1, 2, false);
 
---
--- Site 4 has customized the color
---
-INSERT INTO BLC_THEME_FLD(THEME_FLD_ID, FLD_KEY, THEME_CONFIGURATION_ID, VALUE) VALUES (1, '__headerColor__', 4, '4E81BE');
-INSERT INTO BLC_THEME_FLD_MAP(MAP_KEY, THEME_FLD_ID, THEME_CONFIGURATION_ID) VALUES ('__headerColor__', 1, 4);
+-- Configuration options for custom theme 1
+INSERT INTO BLC_FLD_GROUP(FLD_GROUP_ID, NAME, INIT_COLLAPSED_FLAG) VALUES (1110, 'Basic Color Options', FALSE);
+INSERT INTO BLC_FLD_DEF(FLD_DEF_ID, NAME, FRIENDLY_NAME, FLD_TYPE, SECURITY_LEVEL, HIDDEN_FLAG, VLDTN_REGEX, VLDTN_ERROR_MSSG_KEY, MAX_LENGTH, COLUMN_WIDTH, TEXT_AREA_FLAG, FLD_ENUM_ID, ALLOW_MULTIPLES, FLD_GROUP_ID, FLD_ORDER) VALUES (1110, 'headerColor', 'headerColor', 'STRING', NULL, FALSE, null, null, null, '*', FALSE, NULL, FALSE, 1110, 0);
+INSERT INTO BLC_FLD_DEF(FLD_DEF_ID, NAME, FRIENDLY_NAME, FLD_TYPE, SECURITY_LEVEL, HIDDEN_FLAG, VLDTN_REGEX, VLDTN_ERROR_MSSG_KEY, MAX_LENGTH, COLUMN_WIDTH, TEXT_AREA_FLAG, FLD_ENUM_ID, ALLOW_MULTIPLES, FLD_GROUP_ID, FLD_ORDER) VALUES (1111, 'bgColor', 'bgColor', 'STRING', NULL, FALSE, null, null, null, '*', FALSE, NULL, FALSE, 1110, 1);
+INSERT INTO BLC_THMDEF_FLDGRP_XREF(THEME_DEFINITION_ID, FLD_GROUP_ID, GROUP_ORDER) VALUES (2, 1110, 0);
 
-
-
+-- Default values for custom theme 1
+INSERT INTO BLC_THEME_FLD (THEME_FLD_ID, FLD_KEY, LOB_VALUE, VALUE, THEME_CONFIGURATION_ID) VALUES (13, '__headerColor__', NULL, 'purple', 2),
+INSERT INTO BLC_THEME_FLD (THEME_FLD_ID, FLD_KEY, LOB_VALUE, VALUE, THEME_CONFIGURATION_ID) VALUES (14, '__bgColor__', NULL, 'red', 2);
+INSERT INTO BLC_THEME_FLD_MAP (THEME_CONFIGURATION_ID, THEME_FLD_ID, MAP_KEY) VALUES (2, 13, '__headerColor__'),
+INSERT INTO BLC_THEME_FLD_MAP (THEME_CONFIGURATION_ID, THEME_FLD_ID, MAP_KEY) VALUES (2, 14, '__bgColor__');
