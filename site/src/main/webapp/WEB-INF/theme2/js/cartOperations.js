@@ -110,6 +110,8 @@ $(function(){
                     } else {
                         $errorSpan.css('display', 'none'); 
                         updateHeaderCartItemsCount(data.cartItemCount);
+    
+                        alert("Added to cart. Also, the headerColor is: " + BLC.getThemeVariables().headerColor);
                         
                         if (modalClick) {
                             $.fancybox.close();
