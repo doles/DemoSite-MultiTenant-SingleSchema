@@ -70,7 +70,7 @@
     <mvc:resources order="-10" location="robots.txt" mapping="robots.txt" />
     
     <!-- Abstract bean that defines where the base directory that contains all of the available themes is -->
-    <bean id="resourceBase" abstract="true" class="com.broadleafcommerce.theme.resource.ThemeResourceHttpRequestHandler">
+    <bean id="resourceBase" abstract="true" class="com.broadleafcommerce.theme.web.resource.ThemeResourceHttpRequestHandler">
         <property name="themesBaseDirectory" value="/WEB-INF/" />
     </bean>
     
