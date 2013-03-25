@@ -259,7 +259,7 @@ header {
     color: #342020;
     font: 15px/28px 'Open Sans', Helvetica, sans-serif;
     font-weight: 600;
-    border-top: 15px solid __headerColor__;
+    border-top: 15px solid #E40037;
 }
 
 #header_content {
