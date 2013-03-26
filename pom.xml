@@ -15,20 +15,18 @@
         <gwt.version>2.4.0</gwt.version>
     </properties>
     <description>My Company's eCommerce Website</description>
-    <!-- 
     <repositories>
         <repository>
             <id>snapshots</id>
             <name>snapshots</name>
-            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/multisite-snapshots/</url>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/multitenant-singleschema-snapshots/</url>
         </repository>
         <repository>
             <id>public snapshots</id>
             <name>public snapshots</name>
             <url>http://www.broadleafcommerce.org/nexus/content/repositories/snapshots/</url>
         </repository>
-    </repositories> 
-    -->
+    </repositories>
     <build>
         <pluginManagement>
             <plugins>
