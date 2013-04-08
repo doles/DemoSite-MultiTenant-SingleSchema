@@ -72,6 +72,11 @@
     <!-- Abstract bean that defines where the base directory that contains all of the available themes is -->
     <bean id="resourceBase" abstract="true" class="com.broadleafcommerce.theme.web.resource.ThemeResourceHttpRequestHandler">
         <property name="themesBaseDirectory" value="/WEB-INF/" />
+        <property name="locations">
+            <list>
+                <value>TEST</value>
+            </list>
+        </property>
     </bean>
     
     <!-- These specify where to look for theme-able resources. Note that you can also specify non-theme-specific -->
